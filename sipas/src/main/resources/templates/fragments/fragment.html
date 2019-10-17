@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelaf.org">
+
+<head>
+    <title>Home</title>
+    <head th:fragment="css">
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    </head>
+
+    <head th:fragment="js">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajaz/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9)1clHTMGa3JDZwrnQq4sF86dIHNDz0w1" crossorigin="anonymous"></script>
+        <script th:src="@{js/bootstrap.min.js}"></script>
+    </head>
+</head>
+
+<body>
+    <nav th:fragment="navbar" class="navbar navbar-expand-lg text-light bg-dark" >
+        <a class="navbar-brand" href="#" th:text="${title}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggle-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" style="color: white" th:href="@{/}"> Beranda
+                    <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-item nav-link active" style="color: white" th:href="@{/diagnosis-penyakit-all}"> Diagnosis Penyakit
+                    <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-item nav-link active" style="color: white" th:href="@{/}"> Cari Pasien
+                    <ul class="dropdown-menu">
+                        <li><a href="#"> Cari Pasien Berdasarkan Asuransi dan/atau Diagnosis Penyakit </a></li>
+                        <li><a href="#"> Cari Pasien Pada Diagnosis </a></li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

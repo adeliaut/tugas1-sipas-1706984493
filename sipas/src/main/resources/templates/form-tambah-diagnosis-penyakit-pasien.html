@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <object th:include="fragments/fragment  ::  css" th:remove="tag"></object>
+        <object th:include="fragments/fragment  ::  js" th:remove="tag"></object>
+        <title th:replace="fragments/fragment  ::  title"></title>
+    </head>
+
+    <body style="font-family: 'Montserrat', sans-serif; color">
+        <nav th:replace="fragments/fragment :: navbar(title='SIPAS')"></nav>
+        <div class="row mt-5 ">
+            <div class="col-md-10 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        Detail Data Pasien
+                    </div>
+
+                    <div class="card-body">
+                        <a th:href="@{/}"> Kembali ke Beranda</a>
+
+                        <table>
+                            <tbody th:object = "${pasien}">
+                                <tr>
+                                    <td> Nama </td>
+                                    <td th:text = "${pasien.nama}"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> NIK </td>
+                                    <td th:text = "${pasien.nik}"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Kode </td>
+                                    <td th:text = "${pasien.kode}"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Jenis Kelamin </td>
+                                    <td th:text = "${pasien.jenisKelamin}"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Tanggal Lahir </td>
+                                    <td th:text = "${pasien.tanggalLahir}"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Tempat Lahir </td>
+                                    <td th:text = "${pasien.tempatLahir}"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Emergency Contact </td>
+                                    <!--<td th:text = "${pasien.tempatLahir}"></td>-->
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <form th:action=="@{/pasien/}+${pasien.nik}+@{/tambah-diagnosis}"
+                                              th:object="${pasien}" method="POST">
+                                            <select id="sel1">
+                                                <option selected="selected" disabled="disabled">-- Pilih
+                                                    Diagnosis Penyakit --</option>
+                                                <option th:each="data : ${diagnosis}" th:value="${data.id}"
+                                                        th:text="${data.nama}"></option>
+                                            </select>
+                                            <button class="btn btn-sm btn-primary" type="submit"> Tambah Diagnosis Penyakit Pasien </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                            Diagnosis Penyakit Milik Pasien
+                    </div>
+
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td> No </td>
+                                    <td> Nama </td>
+                                    <td> Tanggal Terdiagnosis </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="data, iterationStatus : *{diagnosis}">
+                                    <td th:text="${iterationStatus.count}"></td>
+                                    <td th:text="${data.nama}"></td>
+                                    <td th:text="${data.tanggalDiagnosis}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </body>
+</html>

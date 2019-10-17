@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <object th:include="fragments/fragment  ::  css" th:remove="tag"></object>
+    <object th:include="fragments/fragment  ::  js" th:remove="tag"></object>
+    <title th:replace="fragments/fragment  ::  title(title='SIPAS')"></title>
+</head>
+
+<body style="font-family: 'Montserrat', sans-serif; color">
+<nav th:replace="fragments/fragment :: navbar(title='SIPAS')"></nav>
+<h1 class="text-center mt-5" > Sistem Informasi Pasien </h1>
+<div class="row mt-5 ">
+    <div class="col-md-10 mx-auto">
+        <button class="btn btn-sm btn-primary">
+            <a th:href="@{/diagnosis-penyakit/tambah}" style="color: white"> Tambah Diagnosis Penyakit </a>
+        </button><br>
+        <div><br></div>
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                Daftar Diagnosis Penyakit
+            </div>
+
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th> No </th>
+                        <th> Nama </th>
+                        <th> Kode </th>
+                        <th> Jumlah Pasien Terdiagnosis </th>
+                        <th> </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="data, iterationStatus : *{diagnosisPenyakit}">
+                        <td th:text="${iterationStatus.count}"> </td>
+                        <td th:text="${data.nama}"></td>
+                        <td th:text="${data.kode}"></td>
+                        <td>-</td>
+                        <td>
+                            <form th:action="@{/diagnosis-penyakit}" method="GET">
+                                <button class="btn btn-sm btn-primary" th:value="${data.id}" name="idDiagnosis">
+                                    Lihat
+                                </button>
+                            </form>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-dark">
+                                Ubah
+                            </button>
+                        </td>
+                        <td>
+                            <form th:action="@{/diagnosis-penyakit/hapus/}+${data.id}">
+                                <button class="btn btn-sm btn-danger">
+                                    Hapus
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

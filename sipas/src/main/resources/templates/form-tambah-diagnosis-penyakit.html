@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <object th:include="fragments/fragment  ::  css" th:remove="tag"></object>
+        <object th:include="fragments/fragment  ::  js" th:remove="tag"></object>
+        <title th:replace="fragments/fragment  ::  title"></title>
+    </head>
+
+    <body style="font-family: 'Montserrat', sans-serif; color">
+        <nav th:replace="fragments/fragment :: navbar(title='Tambah Diagnosis')"></nav>
+        <h1 class="text-center mt-5" > Tambah Data Riwayat Penyakit </h1>
+        <div class="container">
+            <form th:action="@{/diagnosis-penyakit/tambah}" th:object="${diagnosis}" method="POST"><br>
+                Nama <br>
+                <input type="text" name="namaDiagnosis" class="form-control"/><br>
+
+                Kode <br>
+                <input type="text" name="kodeDiagnosis" class="form-control"/><br>
+
+                <button class="btn btn-sm btn-primary" type="submit"> Submit </button><br>
+            </form>
+        </div>
+    </body>
+</html>
