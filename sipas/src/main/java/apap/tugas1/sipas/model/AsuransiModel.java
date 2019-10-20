@@ -25,9 +25,8 @@ public class AsuransiModel implements Serializable {
     public String jenis;
 
     // Relationship Pasien - Asuransi
- /*   @OneToMany(mappedBy = "asuransi", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "asuransi", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<PasienAsuransiModel> listAsuransiPasien;
-  */
 
     public Long getIdAsuransi() {
         return id;
@@ -52,7 +51,7 @@ public class AsuransiModel implements Serializable {
     public void setJenisAsuransi(String jenisAsuransi) {
         this.jenis = jenis;
     }
-/*
+
     public List<PasienAsuransiModel> getListAsuransiPasien() {
         return listAsuransiPasien;
     }
@@ -60,6 +59,4 @@ public class AsuransiModel implements Serializable {
     public void setListAsuransiPasien(List<PasienAsuransiModel> listAsuransiPasien) {
         this.listAsuransiPasien = listAsuransiPasien;
     }
-
- */
 }

@@ -45,8 +45,8 @@
                                 <td th:text="${data.kode}"></td>
                                 <td th:text="${data.tempatLahir}"></td>
                                 <td th:text="${data.tanggalLahir}"></td>
-                                <td>-</td>
-                                <!--<td th:text="${data.noHpEmergencyContact}"></td>-->
+                                <td> - </td>
+                                <!--<td th:text="${data.emergencyContact.emergencyContactPasien.noHp}"></td>-->
                                 <td>
                                     <a th:href = "@{/pasien/} + ${data.nik} + @{/tambah-diagnosis}">
                                         <button class="btn btn-sm btn-dark">

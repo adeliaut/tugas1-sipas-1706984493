@@ -2,6 +2,7 @@ package apap.tugas1.sipas.controller;
 
 import apap.tugas1.sipas.model.AsuransiModel;
 import apap.tugas1.sipas.model.DiagnosisPenyakitModel;
+import apap.tugas1.sipas.model.EmergencyContactModel;
 import apap.tugas1.sipas.model.PasienModel;
 import apap.tugas1.sipas.service.AsuransiService;
 import apap.tugas1.sipas.service.DiagnosisPenyakitService;
