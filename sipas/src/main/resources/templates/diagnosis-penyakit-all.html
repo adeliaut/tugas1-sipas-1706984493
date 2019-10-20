@@ -37,7 +37,7 @@
                         <td th:text="${iterationStatus.count}"> </td>
                         <td th:text="${data.nama}"></td>
                         <td th:text="${data.kode}"></td>
-                        <td>-</td>
+                        <td th:text="${#lists.size(data.listDiagnosisPenyakitPasien)}"> </td>
                         <td>
                             <form th:action="@{/diagnosis-penyakit}" method="GET">
                                 <button class="btn btn-sm btn-primary" th:value="${data.id}" name="idDiagnosis">
