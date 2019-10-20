@@ -35,7 +35,6 @@
             </div>
         </div>
 
-        <!--
         <div class="card">
             <div class="card-header bg-dark text-white">
                 Pasien yang Terdiagnosis
@@ -43,14 +42,16 @@
 
             <div class="card-body">
                 <tbody>
-                    <tr th:each="data, iterationStatus : *{pasien}">
+                    <tr th:each="data, iterationStatus : *{diagnosis.listDiagnosisPenyakitPasien}">
                         <td th:text="${iterationStatus.count}"></td>
-                        <td th:text="${data.nama}"+ " - Kode: " + "${data.kode}"></td>
+                        <td th:text="${data.pasienDiagnosis.nama}"></td>
+                        <td> - Kode: </td>
+                        <td th:text="${data.pasienDiagnosis.kode}"></td>
+                        <br>
                     </tr>
                 </tbody>
             </div>
         </div>
-        -->
 
     </div>
 </div>

@@ -85,21 +85,21 @@ public class PasienController {
     }
 
     // Menambah Diagnosis Penyakit Pasien
-    @RequestMapping(value = "/pasien/{nik}/tambah-diagnosis", method = RequestMethod.GET)
-    public String tambahDiagnosisPenyakitPasienForm(@PathVariable String nik, Model model) {
+    @RequestMapping(value = "/pasien/{nikPasien}/tambah-diagnosis", method = RequestMethod.GET)
+    public String tambahDiagnosisPenyakitPasienForm(@PathVariable String nikPasien, Model model) {
         PasienModel pasienBaru = new PasienModel();
 
         // Menampilkan dropdown diagnosis penyakit
         List<DiagnosisPenyakitModel> listDiagnosisPenyakit = diagnosisPenyakitService.getDiagnosisPenyakitList();
 
-        PasienModel dataPasien = pasienService.getPasienByNik(nik);
+        PasienModel dataPasien = pasienService.getPasienByNik(nikPasien);
 
         model.addAttribute("diagnosis", listDiagnosisPenyakit);
         model.addAttribute("pasien", dataPasien);
         return "form-tambah-diagnosis-penyakit-pasien";
     }
 
-    @RequestMapping(value = "/pasien/{nik}/tambah-diagnosis", method = RequestMethod.POST)
+    @RequestMapping(value = "/pasien/{nikPasien}/tambah-diagnosis", method = RequestMethod.POST)
     public String tambahDiagnosisPenyakitPasienSubmit(@ModelAttribute PasienModel pasien, Model model) {
         pasienService.tambahPasien(pasien);
 
@@ -107,4 +107,6 @@ public class PasienController {
         model.addAttribute("kodePasien", pasien.getKodePasien());
         return "tambah-diagnosis-penyakit-pasien";
     }
+
+
 }
