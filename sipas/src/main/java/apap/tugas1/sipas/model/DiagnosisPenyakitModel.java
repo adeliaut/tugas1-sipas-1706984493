@@ -10,7 +10,7 @@ import java.util.List;
 @Table(name="diagnosis_penyakit")
 public class DiagnosisPenyakitModel implements Serializable {
     @Id
-    @Size(max = 20)
+    //@Size(max = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 

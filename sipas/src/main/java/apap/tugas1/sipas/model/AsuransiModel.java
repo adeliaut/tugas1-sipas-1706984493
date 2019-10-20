@@ -10,7 +10,7 @@ import java.util.List;
 @Table(name="asuransi")
 public class AsuransiModel implements Serializable {
     @Id
-    @Size(max = 20)
+    //@Size(max = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
