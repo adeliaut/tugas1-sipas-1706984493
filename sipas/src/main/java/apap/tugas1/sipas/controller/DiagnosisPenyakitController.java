@@ -1,6 +1,8 @@
 package apap.tugas1.sipas.controller;
 
 import apap.tugas1.sipas.model.DiagnosisPenyakitModel;
+import apap.tugas1.sipas.model.PasienDiagnosisPenyakitModel;
+import apap.tugas1.sipas.model.PasienModel;
 import apap.tugas1.sipas.service.DiagnosisPenyakitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -59,4 +61,18 @@ public class DiagnosisPenyakitController {
         model.addAttribute("diagnosis", id);
         return "hapus-diagnosis-penyakit";
     }
+
+    // Menampilkan Jumlah Pasien Laki-laki dan Perempuan di Suatu Diagnosis
+    /**public String viewJumlahPasien (
+            @RequestParam(value = "idDiagnosis", required = true) Long idDiagnosis,
+            Model model
+    ) {
+        DiagnosisPenyakitModel dataDiagnosisPenyakit =
+                diagnosisPenyakitService.getDiagnosisPenyakitById(idDiagnosis).get();
+        PasienModel pasien =
+                dataDiagnosisPenyakit.getListDiagnosisPenyakitPasien().getPasienDiagnosis().getJenisKelamin();
+
+        model.addAttribute("diagnosis", dataDiagnosisPenyakit);
+        return "diagnosis-penyakit";
+    }*/
 }

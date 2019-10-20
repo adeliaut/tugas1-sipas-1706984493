@@ -58,8 +58,7 @@ public class PasienModel implements Serializable {
     public List<PasienAsuransiModel> listPasienAsuransi;
 
     // Relationship Pasien - Emergency Contact
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name="idEmergencyContact", referencedColumnName ="id")
+    @OneToOne(mappedBy = "emergencyContactPasien", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public EmergencyContactModel emergencyContact;
 
     public void setId(Long id) {

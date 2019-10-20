@@ -16,7 +16,7 @@ public class DiagnosisPenyakitModel implements Serializable {
 
     @NotNull
     @Size(max = 255)
-    @Column(name = "nama", nullable = false)
+    @Column(name = "nama", nullable = true)
     public String nama;
 
     @NotNull

@@ -51,4 +51,20 @@ public class PasienDiagnosisPenyakitModel implements Serializable {
     public void setTanggalDiagnosis(Date tanggalDiagnosis) {
         this.tanggalDiagnosis = tanggalDiagnosis;
     }
+
+    public PasienModel getPasienDiagnosis() {
+        return pasienDiagnosis;
+    }
+
+    public void setPasienDiagnosis(PasienModel pasienDiagnosis) {
+        this.pasienDiagnosis = pasienDiagnosis;
+    }
+
+    public DiagnosisPenyakitModel getDiagnosisPenyakit() {
+        return diagnosisPenyakit;
+    }
+
+    public void setDiagnosisPenyakit(DiagnosisPenyakitModel diagnosisPenyakit) {
+        this.diagnosisPenyakit = diagnosisPenyakit;
+    }
 }
